@@ -63,7 +63,7 @@ func TestAddGetDelete(t *testing.T) {
 	assert.NoError(t, err, "ошибка удаления посылки")
 
 	_, err = store.Get(id)
-	assert.Error(t, err, "посылка с номером должна была быть удалена")
+	assert.Error(t, err, "посылка номером должна была быть удалена")
 }
 
 // TestSetAddress проверяет обновление адреса
@@ -129,7 +129,7 @@ func TestSetStatus(t *testing.T) {
 func TestGetByClient(t *testing.T) {
 	// prepare
 	// настройте подключение к БД
-	db, err := sql.Open("sqlite3", "tracker.db")
+	db, err := sql.Open("sqlite", "tracker.db")
 	require.NoError(t, err, "ошибка при открытии БД")
 	defer db.Close()
 
